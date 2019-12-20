@@ -5,7 +5,7 @@ import SearchForm from "./SearchForm";
 import { Row, Col, Container, Button } from "reactstrap";
 import Spinner from "react-bootstrap/Spinner";
 
-export default function LocationsList() {
+export default function EpisodeList() {
   const [characters, setCharacters] = useState({ firstLoad: true });
   const [query, setQuery] = useState("");
 
@@ -17,7 +17,7 @@ export default function LocationsList() {
 
   useEffect(() => {
     characters.firstLoad &&
-      getCharacters("https://rickandmortyapi.com/api/location/");
+      getCharacters("https://rickandmortyapi.com/api/episode/");
   }, [query]);
 
   const nextPage = () => {
@@ -92,8 +92,8 @@ export default function LocationsList() {
                 <CharacterCard
                   img="https://upload.wikimedia.org/wikipedia/en/thumb/b/bb/Rick_and_Morty_season_4.png/250px-Rick_and_Morty_season_4.png"
                   name={character.name}
-                  species={character.type}
-                  gender={character.dimension}
+                  species={character.air_date}
+                  gender={character.episode}
                 />
               </Col>
             );

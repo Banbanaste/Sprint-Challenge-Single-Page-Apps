@@ -1,6 +1,6 @@
 import React from "react";
 import { Jumbotron, Button, Badge, Container } from "reactstrap";
-import SearchForm from "./SearchForm";
+import { Link } from "react-router-dom";
 
 export default function WelcomePage(props) {
   return (
@@ -17,6 +17,16 @@ export default function WelcomePage(props) {
               style={{ borderRadius: "50%", border: "solid 2px green" }}
             />
           </h1>
+
+          <Link to="/characters">
+            <Button>Characters</Button>
+          </Link>
+          <Link to="/locations" style={{ marginLeft: "20px" }}>
+            <Button>Locations</Button>
+          </Link>
+          <Link to="/episodes" style={{ marginLeft: "20px" }}>
+            <Button>Episodes</Button>
+          </Link>
         </Jumbotron>
       </Container>
     </section>
